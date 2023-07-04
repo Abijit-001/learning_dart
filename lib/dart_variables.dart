@@ -6,7 +6,7 @@ main(){
 
   int amount = 100;
   double dAmount = 500.78001120000127;
-  print("Amount Integer : $amount | Amount Double : $dAmount ");
+  print("Amount Integer : $amount | Amount Double : "+dAmount.toStringAsFixed(5));
 
   dynamic year = 18;
   int age = year;

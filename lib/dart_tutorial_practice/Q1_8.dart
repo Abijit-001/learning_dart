@@ -1,3 +1,4 @@
+///Questions: https://dart-tutorial.com/introduction-and-basics/questions-for-practice-1/
 import 'dart:io';
 main(){
   stdout.writeln("Enter 2 number : ");
