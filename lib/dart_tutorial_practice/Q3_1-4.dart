@@ -3,7 +3,7 @@ import 'dart:math';
 
 /// https://dart-tutorial.com/functions/questions-for-practice-3/
 
-const pi=3.1416;
+// const pi=3.1416;
 main(){
   ///Q3_1 : Print your own name using function.
   print(myName());
@@ -29,8 +29,8 @@ double findAreaOfCircle(double r) => pi*r*r;
 
 String randomPassword() {
   var r = Random.secure();
-  const _chars = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890';
-  String password = List.generate(8, (index) => _chars[r.nextInt(_chars.length)]).join();
+  const alphanums = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890';
+  String password = List.generate(8, (index) => alphanums[r.nextInt(alphanums.length)]).join();
   return "Your password can be : $password.";
 }
 
