@@ -32,6 +32,7 @@ main() {
 
     print('\nTotal of those $i Integer for in loop: $total');
     arr.asMap().forEach((index, value) => print("$value index is $index"));
+    // final list = List<int>.generate(grow  5, (index) => index);
   }
 
 
