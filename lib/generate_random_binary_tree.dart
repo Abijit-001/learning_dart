@@ -7,6 +7,7 @@ import 'dart:developer' as dev;
 // Does not know the depth of its leaf
 // Each Node will have max value of 100
 
+/*
 main() {
   Random random = Random();
   int totalLvl = random.nextInt(10);
@@ -38,4 +39,45 @@ void printTreeArray(List<int> array, int arrayLength) {
 
     print("$space ${array[i]}");
   }
+}*/
+
+class TreeNode {
+  int value;
+  TreeNode? left;
+  TreeNode? right;
+
+  TreeNode(this.value, {this.left, this.right});
 }
+
+Random random = Random();
+
+TreeNode generateRandomBinaryTree(int maxValue, int currentDepth, int maxDepth) {
+  if (currentDepth >= maxDepth || random.nextInt(2) == 0) {
+    return TreeNode(random.nextInt(maxValue) + 1);
+  }
+
+  return TreeNode(
+    random.nextInt(maxValue) + 1,
+    left: generateRandomBinaryTree(maxValue, currentDepth + 1, maxDepth),
+    right: generateRandomBinaryTree(maxValue, currentDepth + 1, maxDepth),
+  );
+}
+
+void printBinaryTree(TreeNode? node, [String prefix = '', bool isLeft = true]) {
+  if (node == null) return;
+
+  printBinaryTree(node.right, '$prefix${isLeft ? '│   ' : '    '}', false);
+
+  print('$prefix${isLeft ? '└── ' : '┌── '}${node.value}');
+
+  printBinaryTree(node.left, '$prefix${isLeft ? '    ' : '│   '}', true);
+}
+
+void main() {
+  int maxValue = 100;
+  int maxDepth = 10;
+
+  TreeNode root = generateRandomBinaryTree(maxValue, 0, maxDepth);
+  printBinaryTree(root);
+}
+
