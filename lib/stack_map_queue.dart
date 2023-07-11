@@ -5,6 +5,12 @@ main(){
   ranQueue();
   ranMap();
   runStack();
+  /*var s=Stack2();
+  s.push(1);
+  s.push(2);
+  s.push(3);
+  s.pop();
+  s.peak();*/
 }
 
 void runStack() {
@@ -60,4 +66,21 @@ void ranQueue() {
   print(queue.every((element) => element <20));
   print(queue.join(' - '));
 
+}
+
+class Stack2 {
+  List<int> list = [];
+
+
+  void push(int val) {
+    list.add(val);
+  }
+
+  void pop() {
+    list.removeLast();
+  }
+
+  void peak() {
+    print('${list[list.length - 1]}');
+  }
 }

@@ -1,0 +1,24 @@
+
+
+void main() {
+  Area area = Area(10, 20);
+  print("Area is: ${area.area}");
+
+  Area area2 = Area(-10, 20);
+  print("Area is: ${area2.area}");
+}
+
+class Area{
+  final int l;
+  final int b;
+  final int area;
+
+  const Area._internal(this.l, this.b) : area= l*b;
+  
+  factory Area(int l, int b){
+    if(l<0 || b<0){
+      throw Exception("Length and breadth must be positive.");
+    }
+    return Area._internal(l, b);
+  }
+}
