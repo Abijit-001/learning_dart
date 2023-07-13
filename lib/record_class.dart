@@ -4,7 +4,7 @@ main() {
   print(x.$3);
   print(x.name);
 
-  ///JSON Destructuring
+  /*///JSON Destructuring
 
   var json = {
     'movie': ["Expendables", 2.5],
@@ -23,5 +23,5 @@ main() {
       print("Movie $title is $length hours long with the cast: $casts");
     default:
       print("Invalid JSON");
-  }
+  }*/
 }

@@ -5,10 +5,7 @@ void main() {
 }
 
 void getData() async{
-  /*String data = await middleFunction();
-  print(data);*/
   try{
-    // String data = await middleFunction();
     print(await middleFunction());
   }catch(err){
     print("Some error $err");
@@ -17,5 +14,5 @@ void getData() async{
 }
 
 Future<String> middleFunction(){
-  return Future.delayed(Duration(seconds:5), ()=> true.toString());
+  return Future.delayed(Duration(milliseconds:500), ()=> true.toString());
 }

@@ -1,4 +1,3 @@
-
 import 'dart:async';
 
 main() async {
@@ -8,13 +7,13 @@ main() async {
 }
 
 Stream<String> getUserName() async* {
-  await Future.delayed(Duration(seconds: 1));
+  await Future.delayed(Duration(milliseconds: 200));
   yield '*******';
-  await Future.delayed(Duration(seconds: 1));
+  await Future.delayed(Duration(milliseconds: 300));
   yield ' ***** ';
-  await Future.delayed(Duration(seconds: 1));
+  await Future.delayed(Duration(milliseconds: 300));
   yield '  ***  ';
-  await Future.delayed(Duration(seconds: 1));
+  await Future.delayed(Duration(milliseconds: 300));
   yield '   *   ';
   await Future.delayed(Duration(seconds: 1));
   yield '  ***  ';

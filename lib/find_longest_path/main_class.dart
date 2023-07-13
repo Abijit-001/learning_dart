@@ -1,47 +1,40 @@
+
+
 import 'dart:io';
+import 'dart:math';
 
-import 'find_paths.dart';
+import 'package:learning_dart/find_longest_path/path_finder.dart';
 
-main() {
+import 'matrix.dart';
+
+
+void main() {
   stdout.write("Enter rows and column number : ");
   int m = int.tryParse(stdin.readLineSync()!)!;
   int n = int.tryParse(stdin.readLineSync()!)!;
-  List<List<int>> maze=[];
 
-  for (int i = 0; i < m; i++) {
-    List<int> row=[];
-    for (int j = 0; j < n; j++) {
-      stdout.write("($i,$j)   ");
-      row.add(j);
-    }
-    maze.add(row);
-    print("\n");
-  }
+  Matrix matrix = Matrix(m, n);
 
-  stdout.write("Enter starting point rows and column number : $maze");
+  matrix.printMatrix();
+
+  stdout.write("Enter starting point rows and column number : ");
   int mStart = int.tryParse(stdin.readLineSync()!)!;
   int nStart = int.tryParse(stdin.readLineSync()!)!;
 
   stdout.write("Enter ending point rows and column number : ");
   int mEnd = int.tryParse(stdin.readLineSync()!)!;
-  int nEnd= int.tryParse(stdin.readLineSync()!)!;
+  int nEnd = int.tryParse(stdin.readLineSync()!)!;
 
-  markPoints(mStart,nStart,mEnd,nEnd,m,n);
+  Point start = Point(mStart, nStart);
+  Point end = Point(mEnd, nEnd);
 
-  findPaths(maze, mEnd, nEnd);
-}
+  matrix.markPoints([start, end]);
 
-void markPoints(int mStart, int nStart, int mEnd, int nEnd, int m, int n) {
+  PathFinder pathFinder = PathFinder();
+  List<Point> longestPath = pathFinder.findLongestPath(matrix.data, start, end);
 
-  for (int i = 1; i <= m; i++) {
-    for (int j = 1; j <= n; j++) {
-      ((i==mStart && j==nStart) || (i==mEnd && j==nEnd))? stdout.write("x   "): stdout.write("(${i-1},${j-1})   ");
-    }
-    print("\n");
+  print("\nLongest Path with ${longestPath.length} point visited : ");
+  for (Point point in longestPath) {
+    stdout.write("(${point.x}, ${point.y})");
   }
-}
-
-void findPaths(List<List<int>> maze, int m, int n) {
-  List<int> path = List<int>.filled(m + n - 1, 0);
-  findPathsUtil(maze, m, n, 0,0, path, 0);
 }
