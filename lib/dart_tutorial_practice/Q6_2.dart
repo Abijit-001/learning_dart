@@ -1,3 +1,5 @@
+/// Q6_2 : Write a dart program to create a class House with properties [id, name, prize]. Create a constructor of it and create 3 objects of it. Add them to the list and print all details.
+
 class House{
   int id;
   String name ;

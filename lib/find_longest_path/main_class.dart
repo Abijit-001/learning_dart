@@ -1,5 +1,4 @@
-
-
+import 'dart:async';
 import 'dart:io';
 import 'dart:math';
 
@@ -7,11 +6,11 @@ import 'package:learning_dart/find_longest_path/path_finder.dart';
 
 import 'matrix.dart';
 
-
-void main() {
+Future<void> main() async {
   stdout.write("Enter rows and column number : ");
   int m = int.tryParse(stdin.readLineSync()!)!;
   int n = int.tryParse(stdin.readLineSync()!)!;
+
 
   Matrix matrix = Matrix(m, n);
 
@@ -36,5 +35,13 @@ void main() {
   print("\nLongest Path with ${longestPath.length} point visited : ");
   for (Point point in longestPath) {
     stdout.write("(${point.x}, ${point.y})");
+  }
+
+  for (int i = 0; i <= longestPath.length; i++) {
+    print("\n");
+    // Timer(Duration(seconds: 1), () { matrix.markPoints(longestPath.sublist(0, i));});
+    await Future.delayed(Duration(milliseconds: 500));
+    matrix.markPoints(longestPath.sublist(0, i));
+
   }
 }

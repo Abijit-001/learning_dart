@@ -4,7 +4,7 @@ import 'dart:io';
 /// https://dart-tutorial.com/conditions-and-loops/questions-for-practice-2/
 
 main(){
-  stdout.writeln("Enter a Character : ");
+  stdout.write("Enter a Character : ");
   String char = stdin.readLineSync()!;
   stdout.writeln(
       "*In the case of String input, only one character will be taken.");

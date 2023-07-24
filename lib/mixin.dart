@@ -9,10 +9,14 @@ abstract class Animal{
 
 }
 
-mixin canRun {
+mixin canRun on Animal{
 
   void printCanRun(){
     print("Can run.");
+  }
+  @override
+  void run() {
+      print("$name can run $speed.");
   }
 }
 
@@ -25,11 +29,6 @@ mixin canFly{
 class Dog extends Animal with canRun {
 
   Dog(String name, String speed) : super(name, speed);
-
-  @override
-  void run() {
-    print("$name can run $speed.");
-  }
 
 }
 

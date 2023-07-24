@@ -2,11 +2,11 @@ late String lastName;
 main(){
   var firstName = 'Abijit';
   lastName = 'Barua';
-  print(firstName + " "+lastName);
+  print("$firstName $lastName");
 
   int amount = 100;
   double dAmount = 500.78001120000127;
-  print("Amount Integer : $amount | Amount Double : "+dAmount.toStringAsFixed(5));
+  print("Amount Integer : $amount | Amount Double : ${dAmount.toStringAsFixed(5)}");
 
   dynamic year = 18;
   int age = year;

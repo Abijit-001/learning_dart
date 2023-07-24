@@ -2,11 +2,12 @@
 
 void main() {
   Area area = Area(10, 20);
-  print("Area is: ${area.area}");
+  print("Area is: ${area.area} and ${area.hashCode}");
 
   Area area2 = Area(-10, 20);
-  print("Area is: ${area2.area}");
+  print("Area is: ${area2.area} and ${area2.hashCode}");
 }
+
 
 class Area{
   final int l;

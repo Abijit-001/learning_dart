@@ -3,7 +3,7 @@ import 'dart:io';
 /// https://dart-tutorial.com/conditions-and-loops/questions-for-practice-2/
 
 main() {
-  stdout.writeln("Enter a Integer : ");
+  stdout.write("Enter a Integer : ");
   int n = int.parse(stdin.readLineSync()!);
 
   ///Q2_1 : Write a dart program to check if the number is odd or even.

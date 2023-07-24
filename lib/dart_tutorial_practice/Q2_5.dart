@@ -22,7 +22,7 @@ main() {
     print('\nTotal of those $i Integer while loop: $total');
     total=0;
 
-    arr.forEach( (num)=>total= total+ num);
+    arr.forEach((n)=>total= total+ n);
     print('\nTotal of those $i Integer for each loop: $total');
 
     total=0;
@@ -33,6 +33,8 @@ main() {
     print('\nTotal of those $i Integer for in loop: $total');
     arr.asMap().forEach((index, value) => print("$value index is $index"));
     // final list = List<int>.generate(grow  5, (index) => index);
+
+    print(arr.fold(arr.length, (i, j) => int.parse(i.toString())+j));
   }
 
 

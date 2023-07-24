@@ -1,16 +1,16 @@
 import 'dart:math';
 
 class PathFinder {
-  List<Point> findLongestPath(List<List<int>> maze, Point start, Point end) {
+  List<Point> findLongestPath(List<List<int>> matrix, Point start, Point end) {
     List<Point> currentPath = [];
     List<Point> longestPath = [];
 
-    _findPath(maze, start, end, currentPath, longestPath);
+    _findPath(matrix, start, end, currentPath, longestPath);
 
     return longestPath;
   }
 
-  void _findPath(List<List<int>> maze, Point current, Point end, List<Point> currentPath, List<Point> longestPath) {
+  void _findPath(List<List<int>> matrix, Point current, Point end, List<Point> currentPath, List<Point> longestPath) {
     currentPath.add(current);
 
     if (current == end) {
@@ -19,11 +19,11 @@ class PathFinder {
         longestPath.addAll(currentPath);
       }
     } else {
-      List<Point> neighbors = _getNeighbors(maze, current);
+      List<Point> neighbors = _getNeighbors(matrix, current);
 
       for (Point neighbor in neighbors) {
         if (!currentPath.contains(neighbor)) {
-          _findPath(maze, neighbor, end, currentPath, longestPath);
+          _findPath(matrix, neighbor, end, currentPath, longestPath);
         }
       }
     }
@@ -31,11 +31,11 @@ class PathFinder {
     currentPath.removeLast();
   }
 
-  List<Point> _getNeighbors(List<List<int>> maze, Point point) {
+  List<Point> _getNeighbors(List<List<int>> matrix, Point point) {
     List<Point> neighbors = [];
 
-    int numRows = maze.length;
-    int numCols = maze[0].length;
+    int numRows = matrix.length;
+    int numCols = matrix[0].length;
 
     if (point.x > 0) neighbors.add(Point(point.x - 1, point.y));
     if (point.x < numRows - 1) neighbors.add(Point(point.x + 1, point.y));

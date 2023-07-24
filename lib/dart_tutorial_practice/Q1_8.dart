@@ -2,9 +2,9 @@
 import 'dart:io';
 main(){
   stdout.writeln("Enter 2 number : ");
-  stdout.writeln("a - ");
+  stdout.write("a - ");
   var a=double.parse(stdin.readLineSync()!);
-  stdout.writeln("b - ");
+  stdout.write("b - ");
   var b=double.parse(stdin.readLineSync()!);
 
   a=a+b;

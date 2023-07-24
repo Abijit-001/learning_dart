@@ -6,4 +6,5 @@ main(){
 
   print("Original Text: $text");
   print("Replaced Text: $newText");
+  print("Replaced Text: ${text.split(" ").join("")}");
 }

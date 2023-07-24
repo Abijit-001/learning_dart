@@ -12,7 +12,7 @@ Stream<String> getUserName() async* {
   await Future.delayed(Duration(milliseconds: 300));
   yield ' ***** ';
   await Future.delayed(Duration(milliseconds: 300));
-  yield '  ***  ';
+  print('  ***  ');
   await Future.delayed(Duration(milliseconds: 300));
   yield '   *   ';
   await Future.delayed(Duration(seconds: 1));

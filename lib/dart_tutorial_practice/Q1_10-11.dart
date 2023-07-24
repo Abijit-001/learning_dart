@@ -2,14 +2,14 @@
 import 'dart:io';
 
 main(){
-  stdout.writeln("Enter total bill : ");
+  stdout.write("Enter total bill : ");
   double? totalBill = double.tryParse(stdin.readLineSync()!);
 
-  stdout.writeln("Enter number of friend : ");
+  stdout.write("Enter number of friend : ");
   int? n= int.tryParse(stdin.readLineSync()!); //tryParse to return null
 
-  double Formula= (totalBill! / n!); //(~/) to return int value instead of double
+  double formula= (totalBill! / n!); //(~/) to return int value instead of double
 
   print("Total bill is $totalBill.");
-  print("Split amount of bill per person $Formula.");
+  print("Split amount of bill per person $formula.");
 }
